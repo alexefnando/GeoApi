@@ -1,0 +1,94 @@
+﻿@{
+    ViewData["Title"] = "Mapa Geológico";
+}
+
+<link rel="stylesheet" href="~/app/leaflet/leaflet.css" />
+
+<style>
+    html, body { margin: 0; padding: 0; height: 100%; }
+    #map { width: 100%; height: calc(100vh - 56px); }
+</style>
+
+<div id="map"></div>
+
+<script src="~/app/leaflet/leaflet.js"></script>
+<script>
+    var osm = L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+        attribution: '&copy; OpenStreetMap contributors'
+    });
+
+    var map = L.map('map', { layers: [osm] }).setView([-1.8312, -78.1834], 7);
+
+    // Capas WMS consumidas a través de tu API
+    var provincias = L.tileLayer.wms('/api/mapa/wms', {
+        layers: 'geoapi:provincias',
+        format: 'image/png',
+        transparent: true,
+        version: '1.1.0'
+    });
+
+    var geologia = L.tileLayer.wms('/api/mapa/wms', {
+        layers: 'geoapi:geologia',
+        format: 'image/png',
+        transparent: true,
+        version: '1.1.0'
+    });
+
+    var muestras = L.tileLayer.wms('/api/mapa/wms', {
+        layers: 'geoapi:muestras_rocas',
+        format: 'image/png',
+        transparent: true,
+        version: '1.1.0'
+    });
+
+    var ecuador = L.tileLayer.wms('/api/mapa/wms', {
+        layers: 'geoapi:ecuador',
+        format: 'image/png',
+        transparent: true,
+        version: '1.1.0'
+    });
+
+    var baseLayers = { "OpenStreetMap": osm };
+    var overlays = {
+        "Provincias": provincias,
+        "Geología": geologia,
+        "Muestras de Rocas": muestras,
+        "Ecuador": ecuador
+    };
+
+    L.control.layers(baseLayers, overlays).addTo(map);
+    provincias.addTo(map);
+    muestras.addTo(map);
+
+    // Click en mapa - consulta muestra cercana via tu API
+    map.on('click', function(e) {
+        var lat = e.latlng.lat;
+        var lon = e.latlng.lng;
+
+        fetch('/api/mapa/wfs/muestras/cercana?lat=' + lat + '&lon=' + lon)
+            .then(response => response.json())
+            .then(data => {
+                if (data.features && data.features.length > 0) {
+                    var f = data.features[0].properties;
+                    L.popup()
+                        .setLatLng(e.latlng)
+                        .setContent(
+                            '<b>' + (f.nombre || 'Sin nombre') + '</b><br>' +
+                            '<b>Código:</b> ' + (f.codigo || '-') + '<br>' +
+                            '<b>Tipo:</b> ' + (f.tipo || '-') + '<br>' +
+                            '<b>Provincia:</b> ' + (f.provincia || '-') + '<br>' +
+                            '<b>Localidad:</b> ' + (f.localidad || '-') + '<br>' +
+                            '<b>Donante:</b> ' + (f.donante || '-') + '<br>' +
+                            '<b>Año:</b> ' + (f.año || '-')
+                        )
+                        .openOn(map);
+                } else {
+                    L.popup()
+                        .setLatLng(e.latlng)
+                        .setContent('No se encontraron muestras en este radio.')
+                        .openOn(map);
+                }
+            })
+            .catch(err => console.error('Error:', err));
+    });
+</script>
