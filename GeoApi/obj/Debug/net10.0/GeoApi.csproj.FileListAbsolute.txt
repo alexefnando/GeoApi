@@ -105,3 +105,4 @@ C:\Users\Administrador\Desktop\GeoApi\GeoApi\obj\Debug\net10.0\compressed\nc67p4
 C:\Users\Administrador\Desktop\GeoApi\GeoApi\obj\Debug\net10.0\compressed\8nvo59ufqs-{0}-b4adnknggc-b4adnknggc.gz
 C:\Users\Administrador\Desktop\GeoApi\GeoApi\obj\Debug\net10.0\compressed\7zjfzs8yjf-{0}-w4n1b1xhjx-w4n1b1xhjx.gz
 C:\Users\Administrador\Desktop\GeoApi\GeoApi\bin\Debug\net10.0\NetTopologySuite.dll
+C:\Users\Administrador\Desktop\GeoApi\GeoApi\obj\Debug\net10.0\GeoApi.sourcelink.json

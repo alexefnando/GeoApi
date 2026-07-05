@@ -33,7 +33,7 @@ namespace GeoApi.Controllers
         public Task<IActionResult> GetGeologia() => GetWfsLayer("geoapi:geologia", 100);
 
         [HttpGet("wfs/muestras")]
-        public Task<IActionResult> GetMuestras() => GetWfsLayer("geoapi:muestras_rocas", 100);
+        public Task<IActionResult> GetMuestras() => GetWfsLayer("geoapi:muestras_rocas", 1500);
 
         [HttpGet("wfs/ecuador")]
         public Task<IActionResult> GetEcuador() => GetWfsLayer("geoapi:ecuador", null);
@@ -52,7 +52,7 @@ namespace GeoApi.Controllers
         public async Task<IActionResult> GetMuestraCercana(
             [FromQuery] double lat,
             [FromQuery] double lon,
-            [FromQuery] double radio = 50000)
+            [FromQuery] double radio = 100)
         {
             var latStr = lat.ToString(System.Globalization.CultureInfo.InvariantCulture);
             var lonStr = lon.ToString(System.Globalization.CultureInfo.InvariantCulture);
