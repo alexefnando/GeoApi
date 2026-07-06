@@ -95,8 +95,6 @@ C:\Users\Administrador\Desktop\GeoApi\GeoApi\obj\Debug\net10.0\refint\GeoApi.dll
 C:\Users\Administrador\Desktop\GeoApi\GeoApi\obj\Debug\net10.0\GeoApi.pdb
 C:\Users\Administrador\Desktop\GeoApi\GeoApi\obj\Debug\net10.0\GeoApi.genruntimeconfig.cache
 C:\Users\Administrador\Desktop\GeoApi\GeoApi\obj\Debug\net10.0\ref\GeoApi.dll
-C:\Users\Administrador\Desktop\GeoApi\GeoApi\obj\Debug\net10.0\GeoApi.csproj.AssemblyReference.cache
-C:\Users\Administrador\Desktop\GeoApi\GeoApi\obj\Debug\net10.0\GeoApi.csproj.Up2Date
 C:\Users\Administrador\Desktop\GeoApi\GeoApi\obj\Debug\net10.0\compressed\llr0iqybxw-{0}-in6jj3e4kb-in6jj3e4kb.gz
 C:\Users\Administrador\Desktop\GeoApi\GeoApi\obj\Debug\net10.0\compressed\j8xkb35kmp-{0}-jlhumrsmn6-jlhumrsmn6.gz
 C:\Users\Administrador\Desktop\GeoApi\GeoApi\obj\Debug\net10.0\compressed\gsgc8m0j2h-{0}-9qvfxtz8cu-9qvfxtz8cu.gz
@@ -104,5 +102,4 @@ C:\Users\Administrador\Desktop\GeoApi\GeoApi\obj\Debug\net10.0\compressed\cfj5ay
 C:\Users\Administrador\Desktop\GeoApi\GeoApi\obj\Debug\net10.0\compressed\nc67p4bd3i-{0}-7888sfn8yc-7888sfn8yc.gz
 C:\Users\Administrador\Desktop\GeoApi\GeoApi\obj\Debug\net10.0\compressed\8nvo59ufqs-{0}-b4adnknggc-b4adnknggc.gz
 C:\Users\Administrador\Desktop\GeoApi\GeoApi\obj\Debug\net10.0\compressed\7zjfzs8yjf-{0}-w4n1b1xhjx-w4n1b1xhjx.gz
-C:\Users\Administrador\Desktop\GeoApi\GeoApi\bin\Debug\net10.0\NetTopologySuite.dll
 C:\Users\Administrador\Desktop\GeoApi\GeoApi\obj\Debug\net10.0\GeoApi.sourcelink.json
