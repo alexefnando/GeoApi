@@ -83,7 +83,6 @@ Queda fuera del alcance:
 
 El sistema se organiza en cuatro capas de arquitectura, dispuestas en serie: la capa de presentación (el cliente de validación en Leaflet y las vistas de ASP.NET Core), la capa de servicio (la API REST, único punto de acceso público), la capa de lógica (GeoServer, expuesto solo internamente vía WMS/WFS) y la capa de acceso a datos (PostgreSQL con PostGIS). El cliente de validación nunca llega directamente a GeoServer ni a la base de datos: toda petición pasa por la API, que actúa como cliente HTTP interno hacia GeoServer.
 
-Los estilos SLD usados para publicar las capas espaciales en GeoServer están disponibles como referencia en docs/geoserver-styles/, fuera del árbol del proyecto ASP.NET Core.
 
 <img width="631" height="639" alt="arquitecturafinal" src="https://github.com/user-attachments/assets/6aa5ca29-fc78-4ada-99c3-7c7b2d374400" />
 ---
